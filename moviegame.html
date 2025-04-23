@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Guessing Game</title>
+  <link rel="stylesheet" href="css/scratch.css" />
+  <!-- Include Fuse.js via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🎬 Movie Guessing Game</h1>
+    <p>Read the description and guess the movie title!</p>
+    <a href="scratch.html">← Back to Scratch Page</a>
+  </div>
+
+  <div class="game-container">
+    <div id="description" class="description">
+      <!-- Movie description will appear here -->
+    </div>
+
+    <input type="text" id="guess-input" placeholder="Type your guess here" />
+    <button id="submit-btn">Submit Guess</button>
+
+    <div id="feedback" class="feedback">
+      <!-- Feedback will appear here -->
+    </div>
+
+    <button id="next-btn" style="display: none;">Next Movie</button>
+
+    <!-- New hint button -->
+    <button id="hint-btn">Get Hint</button>
+    <div id="hint" style="display: none;"></div>
+  </div>
+
+  <script>
+    const movies = [
+      {
+        title: "La La Land",
+        description: "An aspiring actress and a dedicated jazz musician struggle to make ends meet while pursuing their dreams in Los Angeles."
+      },
+      {
+        title: "Inception",
+        description: "A skilled thief is given a chance at redemption if he can successfully perform inception: planting an idea into someone's subconscious."
+      },
+      {
+        title: "Pride & Prejudice",
+        description: "Sparks fly when a spirited young woman meets a proud gentleman in 19th century England, but can they overcome their own pride and prejudice?"
+      },
+      {
+        title: "Star Wars",
+        description: "A young farm boy joins forces with a group of rebels to save the galaxy from a tyrannical empire."
+      },
+      {
+        title: "The Matrix",
+        description: "A computer hacker discovers the reality he lives in is a simulated world controlled by machines."
+      },
+      {
+        title: "Titanic",
+        description: "A young couple from different social classes fall in love aboard an ill-fated voyage."
+      },
+      {
+        title: "The Godfather",
+        description: "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
+      },
+      {
+        title: "The Shawshank Redemption",
+        description: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
+      },
+      {
+        title: "Forrest Gump",
+        description: "The life journey of a simple man with a low IQ, who inadvertently influences several historical events."
+      },
+      {
+        title: "The Dark Knight",
+        description: "A masked vigilante faces off against a chaotic criminal mastermind threatening the city he protects."
+      }
+    ];
+
+    let currentMovie = {};
+    const descriptionEl = document.getElementById('description');
+    const guessInput = document.getElementById('guess-input');
+    const submitBtn = document.getElementById('submit-btn');
+    const feedbackEl = document.getElementById('feedback');
+    const nextBtn = document.getElementById('next-btn');
+    const hintBtn = document.getElementById('hint-btn');
+    const hintEl = document.getElementById('hint');
+
+    // Initialize Fuse.js with movie titles
+    const fuse = new Fuse(movies, {
+      keys: ['title'],
+      threshold: 0.4, // Adjust this value to set matching sensitivity
+      includeScore: true
+    });
+
+    function loadNewMovie() {
+      const randomIndex = Math.floor(Math.random() * movies.length);
+      currentMovie = movies[randomIndex];
+      descriptionEl.textContent = currentMovie.description;
+      guessInput.value = '';
+      feedbackEl.textContent = '';
+      nextBtn.style.display = 'none';
+      hintEl.style.display = 'none'; // Hide hint on new movie
+    }
+
+    submitBtn.addEventListener('click', () => {
+      const userGuess = guessInput.value.trim();
+      const searchResults = fuse.search(userGuess);
+
+      if (searchResults.length > 0 && searchResults[0].item.title === currentMovie.title) {
+        feedbackEl.textContent = '✅ Correct!';
+      } else {
+        feedbackEl.textContent = `❌ Incorrect. The correct answer was "${currentMovie.title}".`;
+      }
+      nextBtn.style.display = 'inline';
+    });
+
+    nextBtn.addEventListener('click', loadNewMovie);
+
+    // Hint functionality
+    hintBtn.addEventListener('click', () => {
+      // Provide a hint (first letter of the movie title)
+      hintEl.textContent = `Hint: The movie title starts with "${currentMovie.title.charAt(0)}"`;
+      hintEl.style.display = 'block';
+    });
+
+    // Initialize the first movie
+    loadNewMovie();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Favorite Movies</title>
+  <link rel="stylesheet" href="css/scratch.css" />
+  <style>
+    /* Movie Group Section with Image on Right and Text Left-Aligned */
+    .movie-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .movie-group .text-content {
+      flex: 1;
+      text-align: left;
+    }
+
+    .movie-group .movie-poster {
+      width: 300px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .movie-group .movie-poster:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .movie-group {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .movie-group .text-content {
+        text-align: center;
+      }
+
+      .movie-group .movie-poster {
+        width: 90%;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div class="header">
+    <h1>My Top 3 Favorite Movies</h1>
+    <a href="index.html">Home Page</a> |
+    <a href="#tips">Jump to Movie-Watching Tips</a>
+  </div>
+
+  <h2>🎞️ My Favorite Films by Country</h2>
+
+  <div class="movie-group">
+    <div class="text-content">
+      <h3>French Films</h3>
+      <ol>
+        <li>The 400 Blows</li>
+        <li>The Umbrellas of Cherbourg</li>
+        <li>He Loves Me… He Loves Me Not</li>
+        <li>La Grande Illusion</li>
+      </ol>
+    </div>
+    <img src="assets/img/400blows.png" alt="French Film Poster" class="movie-poster">
+  </div>
+
+  <div class="movie-group">
+    <div class="text-content">
+      <h3>Italian Films</h3>
+      <ol>
+        <li>Rome, Open City</li>
+        <li>Il Sorpasso</li>
+        <li>Cinema Paradiso</li>
+        <li>Bicycle Thieves</li>
+      </ol>
+    </div>
+    <img src="assets/img/bicyclethief.png" alt="Italian Film Poster" class="movie-poster">
+  </div>
+
+  <div class="movie-group">
+    <div class="text-content">
+      <h3>American Films</h3>
+      <ol>
+        <li>La La Land</li>
+        <li>Inception</li>
+        <li>The Prestige</li>
+        <li>Vertigo</li>
+        <li>Pride & Prejudice</li>
+      </ol>
+    </div>
+    <img src="assets/img/la la land 7.jpg" alt="American Film Poster" class="movie-poster">
+  </div>
+
+  <div class="video-section">
+    <h2>Watch the La La Land Trailer:</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0pdqf4P9MB8" 
+            title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div id="tips" class="tips">
+    <h2>Movie-Watching Tips</h2>
+    <p>Choose a cozy setting, turn off notifications, and immerse yourself fully in the story.</p>
+    <a href="#top">Back to top</a>
+  </div>
+
+  <div class="tableau-section">
+    <h2>Popular Movie Ratings (Tableau)</h2>
+    <iframe src="https://public.tableau.com/app/profile/pradeepkumar.g/viz/Intothemovieverse/app" 
+            width="800" height="600"></iframe>
+  </div>
+
+  <div class="movie-generator-link">
+    <h2>🎲 Movie Generator Game</h2>
+    <p>Want a random movie recommendation? Check out the <a href="moviegame.html">Movie Generator Game</a>!</p>
+  </div>
+
+  <div class="nav-back">
+    <a href="index.html">← Back to Professional Pages</a>
+  </div>
+
+</body>
+</html>

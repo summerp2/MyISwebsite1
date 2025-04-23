@@ -1,0 +1,209 @@
+/* General Page Styles */
+body {
+    font-family: Georgia, serif;
+    background-color: #fdf6f0;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+  
+  /* Header Section */
+  .header {
+    text-align: center;
+    background-color: #f5ccc6;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    color: #4a2c2a;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Film Lists */
+  ul, ol {
+    margin: 30px 0;
+    padding-left: 40px;
+  }
+  
+  li {
+    margin-bottom: 12px;
+    line-height: 1.8;
+    font-size: 1.2em;
+  }
+  
+  li:hover {
+    background-color: #f3e5dc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Default Image Styling */
+  .movie-poster {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 30px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .movie-poster:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Video Section */
+  .video-section {
+    text-align: center;
+    margin: 50px 0;
+  }
+  
+  .video-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Movie-Watching Tips */
+  .tips {
+    background-color: #f3e5dc;
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tips h2 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+  }
+  
+  .tips p {
+    font-size: 1.2em;
+    line-height: 1.7;
+    color: #555;
+  }
+  
+  /* Tableau Graph Section */
+  .tableau-section {
+    margin: 60px 0;
+    text-align: center;
+  }
+  
+  .tableau-section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Web App Link */
+  .web-app-link {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .web-app-link a {
+    background-color: #e3b1ad;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .web-app-link a:hover {
+    background-color: #d29892;
+    transform: scale(1.05);
+  }
+  
+  /* Navigation Link */
+  .nav-back {
+    margin-top: 60px;
+    text-align: center;
+  }
+  
+  .nav-back a {
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-back a:hover {
+    color: #e3b1ad;
+  }
+  
+  /* Movie Group Section with Image on Right and Text Left-Aligned */
+  .movie-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 60px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fff7f2;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07); /* Subtle shadow */
+  }
+  
+  /* Text content aligned left */
+  .movie-group .text-content {
+    flex: 1;
+    text-align: left;
+  }
+  
+  /* Movie poster styling */
+  .movie-group .movie-poster {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Poster hover effect */
+  .movie-group .movie-poster:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive stacking for smaller screens */
+  @media (max-width: 768px) {
+    .movie-group {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .movie-group .text-content {
+      text-align: center;
+    }
+  
+    .movie-group .movie-poster {
+      width: 90%;
+      margin-top: 20px;
+    }
+  }
+  
+  
+  
